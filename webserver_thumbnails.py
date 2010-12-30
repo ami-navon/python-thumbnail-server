@@ -12,10 +12,10 @@ import re
 # python webserver_thumbnails.py
 # 
 # ### To use using HTTP GET:
-# curl "http://localhost:8080?url=http://www.cnn.com"
+# $ curl -O out.png "http://localhost:8080?url=http://www.cnn.com"
 #
 ## ### To use using HTTP POST:
-# curl -X POST -F 'url=http://politicalticker.blogs.cnn.com/2010/12/07/live-blog-president-obamas-news-conference/' "http://localhost:8080"
+# $ curl -O out.png -X POST -F 'url=http://politicalticker.blogs.cnn.com/2010/12/07/live-blog-president-obamas-news-conference/' "http://localhost:8080"
 
 
 
@@ -26,7 +26,7 @@ def generate_thumbnail(url):
 	renderer = WebkitRenderer()
 	renderer.width = 1280
 	renderer.height = 768
-	renderer.timeout = 10
+	renderer.timeout = 60
 	renderer.wait = 3
 	renderer.format = "png"
 	renderer.scaleRatio = "crop"

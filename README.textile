@@ -6,18 +6,15 @@ h2. Usage
 
 To start up the webserver:
 
-<pre>
-xvfb-run --server-args="-screen 0, 1280x768x24" webserver_thumbnails.py 
+<pre>xvfb-run --server-args="-screen 0, 1280x768x24" webserver_thumbnails.py 
 </pre>
 
 Testing using HTTP GET via curl:
-<pre>
- $ curl -O out.png "http://localhost:8080?url=http://www.cnn.com"
+<pre>$ curl -O out.png "http://localhost:8080?url=http://www.cnn.com"
 </pre>
 
 To use using HTTP POST:
-<pre>
- $ curl -O out.png -X POST -F 'url=http://politicalticker.blogs.cnn.com/2010/12/07/live-blog-president-obamas-news-conference/' "http://localhost:8080"
+<pre>$ curl -O out.png -X POST -F 'url=http://politicalticker.blogs.cnn.com/2010/12/07/live-blog-president-obamas-news-conference/' "http://localhost:8080"
 </pre>
 
 h2. Installation

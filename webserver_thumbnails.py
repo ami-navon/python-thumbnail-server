@@ -47,9 +47,12 @@ class WebServerMain(Resource):
 		if (not request.args.has_key("url")) or (len(request.args["url"])==0):
 			return ""
 		url = request.args["url"][0]
+		if None==re.search("^http(|s):\/\/", url):
+			url = "http://"+url
 		print "[Python] Processing thumbnail   %s" % url
 		img = generate_thumbnail(url)
-		request.setHeader('Content-Type', 'img/png; charset=UTF-8')
+		request.setHeader('Content-Type', 'image/png; charset=UTF-8')
+		request.setHeader('content-disposition', 'inline;filename=out.png')
 		print "[Python] Completed OK thumbnail %s" % url
 		return img
 

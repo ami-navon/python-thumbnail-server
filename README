@@ -1,9 +1,0 @@
-sudo aptitude install xvfb xfonts-base xfonts-75dpi xfonts-100dpi imagemagick ttf-mscorefonts-installer python-qt4 python-qt4 python-pip build-essential python-setuptools flashplugin-installer
-
-xvfb-run --server-args="-screen 0, 1024x768x24" webserver_thumbnails.py
-
-curl -O out.png -X POST -F 'url=http://politicalticker.blogs.cnn.com/2010/12/07/li
-ve-blog-president-obamas-news-conference/' "http://localhost:8080"
-
-
-

@@ -1,0 +1,34 @@
+h1. python-thumbnail-server 
+
+A minimal python webserver that easily generates webpage thumbnails. The server makes use of Python, Python Twisted and webkit to render the webpage thumbnails.
+
+h2. Usage
+
+To start up the webserver:
+
+<pre>
+xvfb-run --server-args="-screen 0, 1280x768x24" webserver_thumbnails.py 
+<pre>
+
+Testing using HTTP GET via curl:
+<pre>
+ $ curl -O out.png "http://localhost:8080?url=http://www.cnn.com"
+ </pre>
+
+To use using HTTP POST:
+<pre>
+ $ curl -O out.png -X POST -F 'url=http://politicalticker.blogs.cnn.com/2010/12/07/live-blog-president-obamas-news-conference/' "http://localhost:8080"
+</pre>
+
+h2 Installation
+
+To Install on Ubuntu (tested on Ubuntu Desktop or Sever 10.x):
+
+<pre>
+sudo aptitude install xvfb xfonts-base xfonts-75dpi xfonts-100dpi imagemagick ttf-mscorefonts-installer python-qt4 python-qt4 python-pip build-essential python-setuptools flashplugin-installer
+
+</pre>
+
+h2. Acknowledgments
+
+This library depends heavily on the great "python-webkit2png":https://github.com/AdamN/python-webkit2png gem by Adam Nelson and Roland Tapken at: http://www.blogs.uni-osnabrueck.de/rotapken/2008/12/03/create-screenshots-of-a-web-page-using-python-and-qtwebkit/.

@@ -10,7 +10,7 @@ To start up the webserver in headless mode:
 </pre>
 
 To start up the webserver in non-headless mode:
-<pre>$ python webserver_thumbnails.py<pre>
+<pre>$ python webserver_thumbnails.py</pre>
 
 The program accepts the following command line flags;
 --port: Port to listen on (default: 8080)
@@ -19,7 +19,7 @@ The program accepts the following command line flags;
 
 For example,
 
-<pre>$ python webserver_thumbnails.py --port 8000 --width 320 --height 200<pre>
+<pre>$ python webserver_thumbnails.py --port 8000 --width 320 --height 200</pre>
 
 
 Testing using HTTP GET via curl:

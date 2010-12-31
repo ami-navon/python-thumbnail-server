@@ -29,6 +29,10 @@ import re
 # ### To set width and height in the request:
 # $ curl -O out.png "http://localhost:8080?width=320&height=240&url=http://www.cnn.com"
 #
+#
+# ### To run in headless mode:
+# $ xvfb-run --server-args="-screen 0, 1280x768x24" $PWD/webserver_thumbnails.py --port 8121
+#
 
 from webkit2png import WebkitRenderer, init_qtgui
 from PyQt4.QtCore import QTimer

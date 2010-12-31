@@ -6,7 +6,7 @@ h2. Usage
 
 To start up the webserver in headless mode:
 
-<pre>$ xvfb-run --server-args="-screen 0, 1280x768x24" webserver_thumbnails.py 
+<pre>$ xvfb-run --server-args="-screen 0, 1280x768x24" $PWD/webserver_thumbnails.py 
 </pre>
 
 To start up the webserver in non-headless mode:

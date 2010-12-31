@@ -40,6 +40,8 @@ To Install on Ubuntu (tested on Ubuntu Desktop or Sever 10.x):
 
 <pre>
 sudo aptitude install xvfb xfonts-base xfonts-75dpi xfonts-100dpi imagemagick ttf-mscorefonts-installer python-qt4 python-qt4 python-pip build-essential python-setuptools flashplugin-installer
+
+sudo pip install -U twisted
 </pre>
 
 h2. Acknowledgments

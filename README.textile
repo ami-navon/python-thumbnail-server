@@ -4,10 +4,23 @@ A minimal python webserver that easily generates webpage thumbnails. The server 
 
 h2. Usage
 
-To start up the webserver:
+To start up the webserver in headless mode:
 
-<pre>xvfb-run --server-args="-screen 0, 1280x768x24" webserver_thumbnails.py 
+<pre>$ xvfb-run --server-args="-screen 0, 1280x768x24" webserver_thumbnails.py 
 </pre>
+
+To start up the webserver in non-headless mode:
+<pre>$ python webserver_thumbnails.py<pre>
+
+The program accepts the following command line flags;
+--port: Port to listen on (default: 8080)
+--width : Default thumbnail width (default: 640)
+--height : Default thumbnail height (default: 480)
+
+For example,
+
+<pre>$ python webserver_thumbnails.py --port 8000 --width 320 --height 200<pre>
+
 
 Testing using HTTP GET via curl:
 <pre>$ curl -O out.png "http://localhost:8080?url=http://www.cnn.com"
@@ -15,6 +28,10 @@ Testing using HTTP GET via curl:
 
 To use using HTTP POST:
 <pre>$ curl -O out.png -X POST -F 'url=http://politicalticker.blogs.cnn.com/2010/12/07/live-blog-president-obamas-news-conference/' "http://localhost:8080"
+</pre>
+
+Set thumbnail width and height in the url:
+<pre>$ curl -O out.png "http://localhost:8080?width=320&height=240&url=http://www.cnn.com"
 </pre>
 
 h2. Installation
